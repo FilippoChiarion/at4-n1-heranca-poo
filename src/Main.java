@@ -18,5 +18,35 @@ public class Main {
                 "Gerente", "01/01/2012", 10000.00, 10, 300);
 
 
+        //mostrar dados
+        p1.mostrarDados();
+        System.out.println();
+        f1.mostrarDados();
+        System.out.println();
+        g1.mostrarDados();
+        System.out.println("\n--------------------------------\n");
+
+
+        //metodos de funcionario
+        System.out.println("Salário atual: R$" + f1.getSalario());
+
+        System.out.println("Aplicando um aumento de 10%...");
+        f1.receberAumento(10);
+        System.out.println("Salário após aumento: R$" + f1.getSalario());
+
+        double salarioAnual = f1.calcularSalarioAnual();
+        System.out.println("Salário anual do funcionário: R$" + salarioAnual);
+        System.out.println("\n--------------------------------\n");
+
+
+        // metodos de gerente
+        g1.gerenciarEquipe();
+
+        double salarioComBonus = g1.calcularSalarioComBonus(g1.getBonus());
+        System.out.println("Salário do gerente com bônus: R$" + salarioComBonus);
+
+        System.out.println("Alterando o tamanho da equipe...");
+        g1.setEquipe(12);
+        System.out.println("Tamanho atual da equipe (usando getter): " + g1.getEquipe() + " pessoas.");
     }
 }

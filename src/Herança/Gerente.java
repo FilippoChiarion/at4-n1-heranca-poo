@@ -35,6 +35,7 @@ public class Gerente extends Funcionario{
         System.out.println("O gerente "+getNome()+"está gerenciando uma equipe de "+equipe+" pessoas");
     }
 
+    @Override
     public void mostrarDados() {
         super.mostrarDados();
         System.out.println("Equipe: "+equipe);
