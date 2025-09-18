@@ -1,14 +1,33 @@
 package Herança;
 
-public class Gerente extends Funcionario{
+public class Gerente {
 
     private int equipe;
     private double bonus;
+    private Funcionario funcionario;
 
-    public Gerente(String nome, int idade, String cpf, String cargo, String dataAdmissao, double salario, int equipe, double bonus) {
-        super(nome, idade, cpf, cargo, dataAdmissao, salario);
+    public Gerente(Funcionario funcionario, int equipe, double bonus) {
+        this.funcionario = funcionario;
         this.equipe = equipe;
         this.bonus = bonus;
+    }
+
+    public void mostrarDados() {
+        funcionario.mostrarDados();
+        System.out.println("Equipe: " + equipe);
+        System.out.println("Bonus: " + bonus);
+    }
+
+    public String getNome() {
+        return this.funcionario.getNome();
+    }
+
+    public void gerenciarEquipe() {
+        System.out.println("O gerente " + getNome() + " está gerenciando uma equipe de " + equipe + " pessoas");
+    }
+
+    public double calcularSalarioComBonus(double bonus) {
+        return funcionario.getSalario() + bonus;
     }
 
     public int getEquipe() {
@@ -27,18 +46,7 @@ public class Gerente extends Funcionario{
         this.bonus = bonus;
     }
 
-    public double calcularSalarioComBonus(double bonus) {
-        return salario+bonus;
-    }
-
-    public void gerenciarEquipe() {
-        System.out.println("O gerente "+getNome()+"está gerenciando uma equipe de "+equipe+" pessoas");
-    }
-
-    @Override
-    public void mostrarDados() {
-        super.mostrarDados();
-        System.out.println("Equipe: "+equipe);
-        System.out.println("Bonus: "+bonus);
+    public void receberAumento(double porcentagem) {
+        this.funcionario.receberAumento(porcentagem);
     }
 }
